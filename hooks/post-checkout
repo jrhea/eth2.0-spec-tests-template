@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+REPO=$(git rev-parse --show-toplevel)
+
+echo $REPO
+
+cd $REPO/eth-reference-tests/src/test/resources/
+curl -L -o v0.8.3.tar.gz https://github.com/ethereum/eth2.0-spec-tests/archive/v0.8.3.tar.gz
+mkdir -p eth2.0-spec-tests && tar -xzf v0.8.3.tar.gz.tar -C eth2.0-spec-tests --strip-components 1
+
